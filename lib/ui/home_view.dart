@@ -70,7 +70,12 @@ class HomeView extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Column(
-              children: const [WeatherDetailLabel()],
+              children: const [
+                WeatherDetailLabel(
+                  label: 'Humidity',
+                  value: '87%',
+                )
+              ],
             )
           ],
         ),
@@ -82,7 +87,12 @@ class HomeView extends StatelessWidget {
 class WeatherDetailLabel extends StatelessWidget {
   const WeatherDetailLabel({
     Key? key,
+    required this.label,
+    required this.value,
   }) : super(key: key);
+
+  final String label;
+  final String value;
 
   @override
   Widget build(BuildContext context) {
